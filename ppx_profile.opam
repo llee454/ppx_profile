@@ -12,9 +12,9 @@ executed. It aims to be a lightweight profiler tool for OCaml.
 """
 license: "GPL-3.0-or-later"
 tags: []
-homepage: "https://github.com/llee454"
-doc: "https://github.com/llee454"
-bug-reports: "https://github.com/llee454"
+homepage: "https://github.com/llee454/ppx_profile"
+doc: "https://github.com/llee454/ppx_profile"
+bug-reports: "https://github.com/llee454/ppx_profile/issues"
 pin-depends: []
 depends: [
   "ocaml"
@@ -27,3 +27,4 @@ depends: [
   "lwt"
   "lwt_ppx"
 ]
+build: ["dune" "build" "-p" name "-j" jobs]
