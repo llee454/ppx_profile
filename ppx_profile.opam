@@ -1,0 +1,29 @@
+opam-version: "2.0"
+maintainer: "Larry Darryl Lee Jr. <llee454@gmail.com>"
+authors: [
+  "Larry Darryl Lee Jr."
+]
+synopsis: "A PPX that makes it easy to determine how long a program spent executing a given line of code"
+description: """
+This package defines a PPX that can be used to profile OCaml code.
+Specifically, this PPX calculates the amount of time a program spends
+executing a given line of code, and the number of times the line was
+executed. It aims to be a lightweight profiler tool for OCaml.
+"""
+license: "GPL-3.0-or-later"
+tags: []
+homepage: "https://github.com/llee454"
+doc: "https://github.com/llee454"
+bug-reports: "https://github.com/llee454"
+pin-depends: []
+depends: [
+  "ocaml"
+  "dune"
+  "ocaml-lsp-server"
+  "ocamlformat"
+  "ppx_jane"
+  "core_kernel"
+  "core"
+  "lwt"
+  "lwt_ppx"
+]

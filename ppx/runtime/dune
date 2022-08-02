@@ -1,0 +1,14 @@
+(library
+  (name ppx_profile_runtime)
+  (public_name ppx_profile.runtime)
+  (libraries
+    core
+    lwt
+    lwt.unix
+  )
+  (preprocess (pps
+    ppx_jane
+    lwt_ppx
+  ))
+)
+

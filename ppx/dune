@@ -1,0 +1,13 @@
+(library
+  (public_name ppx_profile)
+  (name ppx_profile)
+  (kind ppx_rewriter)
+  (libraries
+    core_kernel
+    lwt
+    lwt.unix
+    ppxlib
+  )
+  (preprocess (pps ppxlib.metaquot ppx_jane lwt_ppx))
+  (ppx_runtime_libraries ppx_profile_runtime)
+)
