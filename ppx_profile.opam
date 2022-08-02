@@ -15,7 +15,6 @@ tags: []
 homepage: "https://github.com/llee454/ppx_profile"
 doc: "https://github.com/llee454/ppx_profile"
 bug-reports: "https://github.com/llee454/ppx_profile/issues"
-pin-depends: []
 depends: [
   "ocaml"
   "dune"
