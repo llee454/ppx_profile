@@ -25,6 +25,8 @@ The following Dune file illustrates how to add Profile PPX to your Dune file:
 )
 ```
 
+You must also update your OPAM package configuration file. Add the following line to your "pin-depends" section: ["ppx_profile.1.0.0" "git+https://github.com/llee454/ppx_profile.git#main"]. Add the following to your "depends" section: "ppx_profile" { = "1.0.0"}.
+
 3. wrap any expression that you want to profile in `[%profile ...]`.
 
 For example:
