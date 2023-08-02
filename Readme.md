@@ -6,10 +6,7 @@ The Profile PPX makes it easier for OCaml developers to profile their code. This
 Usage
 -----
 
-To use the Profile PPX in your OCaml projects:
-
-1. add the `ppx_profile_runtime` library to your Dune file's `libraries` list
-2. add the `ppx_profile` preprocessor to your Dune file's `preprocess` list
+To use the Profile PPX in your OCaml projects add the `ppx_profile` preprocessor to your Dune file's `preprocess` list
 
 The following Dune file illustrates how to add Profile PPX to your Dune file:
 
@@ -17,13 +14,15 @@ The following Dune file illustrates how to add Profile PPX to your Dune file:
 (executable
   (name main)
   (libraries
-    ppx_profile_runtime
+    ...
   )
   (preprocess (pps
     ppx_profile
   ))
 )
 ```
+
+You must also update your OPAM package configuration file. Add the following line to your "pin-depends" section: ["ppx_profile.1.0.0" "git+https://github.com/llee454/ppx_profile.git#main"]. Add the following to your "depends" section: "ppx_profile" { = "1.0.0"}.
 
 3. wrap any expression that you want to profile in `[%profile ...]`.
 
