@@ -5,7 +5,7 @@
   executing them.
 *)
 
-open! Core_kernel
+open! Core
 open! Lwt.Syntax
 open! Lwt.Infix
 

@@ -3,7 +3,7 @@
   (name ppx_profile)
   (kind ppx_rewriter)
   (libraries
-    core_kernel
+    core
     lwt
     lwt.unix
     ppxlib

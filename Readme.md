@@ -48,8 +48,8 @@ Initializing the Build Environment
 ----------------------------------
 
 ```
-opam switch create . ocaml-variants.4.10.0+flambda --no-install
+opam switch create . 5.0.0+options --no-install
 opam update
-opam install --deps-only .
+opam install --deps-only . -y
 dune build
 ```

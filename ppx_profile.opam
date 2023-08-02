@@ -21,7 +21,6 @@ depends: [
   "ocaml-lsp-server"
   "ocamlformat"
   "ppx_jane"
-  "core_kernel"
   "core"
   "lwt"
   "lwt_ppx"
