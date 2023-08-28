@@ -113,11 +113,11 @@ let sexp_of_stats { num_executions; total_time } =
   was executed and how long the program spent executing it.
 *)
 let annotate () =
-  Table.fold profiler ~init:String.Map.empty ~f:(fun ~key:{ pos_fname; pos_lnum; _ } ~data:stats acc ->
-      String.Map.update acc pos_fname ~f:(function
-        | Some annotations -> Int.Map.add_multi annotations ~key:pos_lnum ~data:stats
+  Hashtbl.fold profiler ~init:String.Map.empty ~f:(fun ~key:{ pos_fname; pos_lnum; _ } ~data:stats acc ->
+      Map.update acc pos_fname ~f:(function
+        | Some annotations -> Map.add_multi annotations ~key:pos_lnum ~data:stats
         | None -> Int.Map.singleton pos_lnum [ stats ]))
-  |> String.Map.to_alist
+  |> Map.to_alist
   |> Lwt_list.iter_s (fun (filename, annotations) ->
          let lnum = ref 0 in
          let output_filename =
@@ -127,7 +127,7 @@ let annotate () =
          Lwt_io.lines_of_file filename
          |> Lwt_stream.map_list (fun curr_line ->
                 incr lnum;
-                Int.Map.find annotations !lnum |> function
+                Map.find annotations !lnum |> function
                 | Some stats ->
                   [ [%sexp_of: stats list] stats |> sprintf !"(* PROFILER %{Sexp} *)"; curr_line ]
                 | None -> [ curr_line ])
